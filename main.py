@@ -272,3 +272,4 @@ def dietary_advise(category, blood_type, return_advice=False):
 patient = Patient()
 
 patient.run_application()
+
