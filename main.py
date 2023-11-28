@@ -216,3 +216,59 @@ else:
         print("Invalid category")
 
         return advice if return_advice else ""
+    class Patient:
+    def __init__(self, name="", gender="", blood_type="", age=""):
+        self.name = name
+        self.gender = gender
+        self.blood_type = blood_type
+        self.age = age
+
+    def display_patient_info(self):
+        print(f"Name: {self.name}\nGender: {self.gender}\nBlood Type: {self.blood_type}\nAge: {self.age}")
+
+    def save_to_file(self, bmi, category, advice):
+        file_name = f"{self.name}_health_report.txt"
+        with open(file_name, "w") as file:
+            file.write(f"Name: {self.name}\nGender: {self.gender}\nBlood Type: {self.blood_type}\nAge: {self.age}\n")
+            file.write(f"BMI: {bmi:.2f}\nCategory: {category}\n")
+            file.write("Medical Advice:\n")
+            file.write(advice or "")
+        print(f"Health report saved to {file_name}")
+
+    def run_application(self):
+        category = ""
+        weight = 0.0
+        height = 0.0
+        bmi = 0.0
+        advice = ""
+
+        while True:
+            print("\n1. Add patient\n2. Enter your details\n3. Display patient\n4. Medical advice\n5. Save and Exit")
+            choice = input("Enter your choice (1-5): ")
+
+            if choice == "1":
+                self.name = input("Enter your name: ")
+                self.gender = input("Enter your gender: ")
+                self.blood_type = input("Enter your blood type (O, A, B, AB): ").lower()
+                self.age = input("Enter your age: ")
+            elif choice == "2":
+                weight = float(input("Enter your weight (kg): "))
+                height = float(input("Enter your height (m): "))
+                bmi, category = bmi_calculator(weight, height)
+                print(f"Your BMI is {bmi:.2f}, and your category is {category}")
+            elif choice == "3":
+                self.display_patient_info()
+            elif choice == "4":
+                advice = dietary_advise(category, self.blood_type, return_advice=True)
+                print(advice)
+            elif choice == "5":
+                self.save_to_file(bmi, category, advice)
+                print("Exiting the application. Goodbye!")
+                break
+            else:
+                print("Invalid choice. Please enter a number between 1 and 5.")
+
+
+patient = Patient()
+
+patient.run_application()
