@@ -32,5 +32,15 @@ def dietary_advise(category, blood_type, return_advice=False):
                     - Focus on lean protein sources such as poultry, fish, and lean meats.
                     - Include whole grains like quinoa, brown rice, and oats.
                     - Incorporate healthy fats from sources like olive oil, avocados, and nuts.""")
-
+          elif blood_type == "a":
+            print("""
+                    You are advised to:
+                    - Consult with a healthcare professional to identify potential underlying causes of low weight.
+                    - Develop a balanced and nutrient-dense meal plan to support weight gain.
+                    - Collaborate with a registered dietitian to ensure nutritional needs are met.
+                    - Rule out any medical conditions contributing to low weight. 
+                    - Include lean protein sources such as fish, poultry, tofu, and legumes.
+                    - Incorporate whole grains like quinoa, brown rice, and oats for energy.
+                    - Include sources of healthy fats, such as avocados, nuts, and olive oil.
+                    """)
         
