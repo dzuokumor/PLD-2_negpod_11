@@ -130,4 +130,89 @@ def dietary_advise(category, blood_type, return_advice=False):
                 - Minimize processed foods and focus on whole, nutrient-dense options.
                 - Choose complex carbohydrates in moderation.
                 """)
+        elif blood_type == "a":
+    print("""
+            You are advised to
+            - Adopt a balanced and calorie-controlled diet with an emphasis on whole foods.
+            - Engage in regular physical activity, incorporating both aerobic and strength-training exercises.
+            - Consult with a registered dietitian for personalized dietary guidance.
+            - Discuss weight management goals with a healthcare provider for ongoing support.
+            - Be mindful of portion sizes and practice moderation.
+            - Consider incorporating more vegetarian meals with plant-based proteins.
+            - Include regular physical activity in your routine.
+            """)
 
+elif blood_type == "b":
+    print("""
+            You are advised to
+            - Adopt a balanced and calorie-controlled diet with an emphasis on whole foods.
+            - Engage in regular physical activity, incorporating both aerobic and strength-training exercises.
+            - Consult with a registered dietitian for personalized dietary guidance.
+            - Monitor portion sizes and practice mindful eating.
+            - Discuss weight management goals with a healthcare provider for ongoing support.
+            - Choose complex carbohydrates in moderation.
+            - Emphasize lean protein sources for satiety.
+            - Minimize the intake of sugary snacks and beverages.
+            """)
+
+elif blood_type == "ab":
+    print("""
+            You are advised to
+            - Adopt a balanced and calorie-controlled diet with an emphasis on whole foods.
+            - Engage in regular physical activity, incorporating both aerobic and strength-training exercises.
+            - Consult with a registered dietitian for personalized dietary guidance.
+            - Monitor portion sizes and practice mindful eating.
+            - Choose lean protein options to support weight management.
+            - Opt for fiber-rich foods like whole grains, legumes, and vegetables for satiety.
+            - Stay well-hydrated with water and herbal teas to support metabolism.
+            """)
+else:
+    print("Invalid blood type for the given category")
+
+    elif category_lower == "obese":
+    if blood_type == "o":
+        print("""
+                You are advised to
+                - Seek guidance from healthcare professionals for a comprehensive weight management plan.
+                - Adopt a balanced and calorie-controlled diet, emphasizing whole foods.
+                - Incorporate regular physical activity into daily routines, with a mix of aerobic and strength-training exercises.
+                - Consider behavioral counseling or support groups for weight management.
+                - Discuss potential medical interventions, such as medications or bariatric surgery, if appropriate.
+                """)
+
+    elif blood_type == "a":
+        print("""
+                You are advised to
+                - Seek guidance from healthcare professionals for a comprehensive weight management plan.
+                - Adopt a balanced and calorie-controlled diet, emphasizing whole foods.
+                - Incorporate regular physical activity into daily routines, with a mix of aerobic and strength-training exercises.
+                - Consider behavioral counseling or support groups for weight management.
+                - Discuss potential medical interventions, such as medications or bariatric surgery, if appropriate.
+                """)
+
+    elif blood_type == "b":
+        print("""
+                You are advised to
+                - Seek guidance from healthcare professionals for a comprehensive weight management plan.
+                - Adopt a balanced and calorie-controlled diet, emphasizing whole foods.
+                - Incorporate regular physical activity into daily routines, with a mix of aerobic and strength-training exercises.
+                - Consider behavioral counseling or support groups for weight management.
+                - Discuss potential medical interventions, such as medications or bariatric surgery, if appropriate.
+                - Pay attention to portion sizes to manage calorie intake.
+                """)
+
+    elif blood_type == "ab":
+        print("""
+                You are advised to
+                - Seek guidance from healthcare professionals for a comprehensive weight management plan.
+                - Adopt a balanced and calorie-controlled diet.
+                - Incorporate regular aerobic and strength-training exercises.
+                - Prioritize whole, unprocessed foods for nutritional density.
+                - Incorporate regular physical activity tailored to individual abilities and preferences.
+            """)
+    else:
+        print("Invalid blood type for the given category")
+    else:
+        print("Invalid category")
+
+        return advice if return_advice else ""
