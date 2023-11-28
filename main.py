@@ -22,3 +22,9 @@ def dietary_advise(category, blood_type, return_advice=False):
     advice = ""
 
     if category_lower == "underweight":
+          if blood_type == "o":
+            print("""You are advised to:
+                    - Consult with a healthcare professional to identify potential underlying causes of low weight.
+                    - Develop a balanced and nutrient-dense meal plan to support weight gain.
+                    - Consider incorporating healthy fats, pr
+        
