@@ -22,7 +22,7 @@ def dietary_advise(category, blood_type, return_advice=False):
     advice = ""
 
     if category_lower == "underweight":
-          if blood_type == "o":
+        if blood_type == "o":
             print("""You are advised to:
                     - Consult with a healthcare professional to identify potential underlying causes of low weight.
                     - Develop a balanced and nutrient-dense meal plan to support weight gain.
@@ -32,7 +32,7 @@ def dietary_advise(category, blood_type, return_advice=False):
                     - Focus on lean protein sources such as poultry, fish, and lean meats.
                     - Include whole grains like quinoa, brown rice, and oats.
                     - Incorporate healthy fats from sources like olive oil, avocados, and nuts.""")
-          elif blood_type == "a":
+        elif blood_type == "a":
             print("""
                     You are advised to:
                     - Consult with a healthcare professional to identify potential underlying causes of low weight.
@@ -43,8 +43,8 @@ def dietary_advise(category, blood_type, return_advice=False):
                     - Incorporate whole grains like quinoa, brown rice, and oats for energy.
                     - Include sources of healthy fats, such as avocados, nuts, and olive oil.
                     """)
-       elif blood_type == "b":
-        print("""
+        elif blood_type == "b":
+            print("""
                 You are advised to:
                 - Consult with a healthcare professional to identify potential underlying causes of low weight.
                 - Develop a balanced and nutrient-dense meal plan to support weight gain.
@@ -70,9 +70,9 @@ def dietary_advise(category, blood_type, return_advice=False):
         else:
             print("Invalid blood type for the given category")
 
-        elif category_lower == "normal weight":
+    elif category_lower == "normal weight":
         if blood_type == "o":
-        print("""
+            print("""
                 You are advised to
                 - Focus on portion control and mindful eating to support overall health.
                 - Engage in regular physical activity for cardiovascular health and overall well-being.
@@ -82,7 +82,7 @@ def dietary_advise(category, blood_type, return_advice=False):
                 - Choose lean protein sources, including fish, poultry, beans, and lentils.
                 - Prioritize a variety of colorful fruits and vegetables.""")
         elif blood_type == "a":
-        print("""
+            print("""
                 You are advised to
                 - Focus on portion control and mindful eating to support overall health.
                 - Engage in regular physical activity for cardiovascular health and overall well-being.
@@ -92,8 +92,8 @@ def dietary_advise(category, blood_type, return_advice=False):
                 - Explore plant-based protein sources like beans, lentils, and tofu.
                 - Minimize processed foods and focus on whole, nutrient-dense options.
                 """)
-    elif blood_type == "b":
-        print("""
+        elif blood_type == "b":
+            print("""
                 You are advised to
                 - Focus on portion control and mindful eating to support overall health.
                 - Engage in regular physical activity for cardiovascular health and overall well-being.
@@ -105,8 +105,8 @@ def dietary_advise(category, blood_type, return_advice=False):
                 - Choose whole, minimally processed foods over highly processed options.
                 """)
 
-    elif blood_type == "ab":
-        print("""
+        elif blood_type == "ab":
+            print("""
                 You are advised to
                 - Maintain a balanced diet that includes a variety of food groups.
                 - Focus on portion control and mindful eating to support overall health.
@@ -114,8 +114,8 @@ def dietary_advise(category, blood_type, return_advice=False):
                 - Schedule regular check-ups with a healthcare provider for preventive care.
                 - Enjoy diverse protein sources including seafood, eggs, and legumes.                
                 """)
-    else:
-        print("Invalid blood type for the given category")
+        else:
+            print("Invalid blood type for the given category")
 
     elif category_lower == "overweight":
         if blood_type == "o":
@@ -131,7 +131,7 @@ def dietary_advise(category, blood_type, return_advice=False):
                 - Choose complex carbohydrates in moderation.
                 """)
         elif blood_type == "a":
-    print("""
+            print("""
             You are advised to
             - Adopt a balanced and calorie-controlled diet with an emphasis on whole foods.
             - Engage in regular physical activity, incorporating both aerobic and strength-training exercises.
@@ -142,8 +142,8 @@ def dietary_advise(category, blood_type, return_advice=False):
             - Include regular physical activity in your routine.
             """)
 
-elif blood_type == "b":
-    print("""
+        elif blood_type == "b":
+            print("""
             You are advised to
             - Adopt a balanced and calorie-controlled diet with an emphasis on whole foods.
             - Engage in regular physical activity, incorporating both aerobic and strength-training exercises.
@@ -155,8 +155,8 @@ elif blood_type == "b":
             - Minimize the intake of sugary snacks and beverages.
             """)
 
-elif blood_type == "ab":
-    print("""
+        elif blood_type == "ab":
+            print("""
             You are advised to
             - Adopt a balanced and calorie-controlled diet with an emphasis on whole foods.
             - Engage in regular physical activity, incorporating both aerobic and strength-training exercises.
@@ -166,12 +166,12 @@ elif blood_type == "ab":
             - Opt for fiber-rich foods like whole grains, legumes, and vegetables for satiety.
             - Stay well-hydrated with water and herbal teas to support metabolism.
             """)
-else:
-    print("Invalid blood type for the given category")
+        else:
+            print("Invalid blood type for the given category")
 
     elif category_lower == "obese":
-    if blood_type == "o":
-        print("""
+        if blood_type == "o":
+            print("""
                 You are advised to
                 - Seek guidance from healthcare professionals for a comprehensive weight management plan.
                 - Adopt a balanced and calorie-controlled diet, emphasizing whole foods.
@@ -180,8 +180,8 @@ else:
                 - Discuss potential medical interventions, such as medications or bariatric surgery, if appropriate.
                 """)
 
-    elif blood_type == "a":
-        print("""
+        elif blood_type == "a":
+            print("""
                 You are advised to
                 - Seek guidance from healthcare professionals for a comprehensive weight management plan.
                 - Adopt a balanced and calorie-controlled diet, emphasizing whole foods.
@@ -190,8 +190,8 @@ else:
                 - Discuss potential medical interventions, such as medications or bariatric surgery, if appropriate.
                 """)
 
-    elif blood_type == "b":
-        print("""
+        elif blood_type == "b":
+            print("""
                 You are advised to
                 - Seek guidance from healthcare professionals for a comprehensive weight management plan.
                 - Adopt a balanced and calorie-controlled diet, emphasizing whole foods.
@@ -201,8 +201,8 @@ else:
                 - Pay attention to portion sizes to manage calorie intake.
                 """)
 
-    elif blood_type == "ab":
-        print("""
+        elif blood_type == "ab":
+            print("""
                 You are advised to
                 - Seek guidance from healthcare professionals for a comprehensive weight management plan.
                 - Adopt a balanced and calorie-controlled diet.
@@ -210,18 +210,18 @@ else:
                 - Prioritize whole, unprocessed foods for nutritional density.
                 - Incorporate regular physical activity tailored to individual abilities and preferences.
             """)
-    else:
-        print("Invalid blood type for the given category")
+        else:
+            print("Invalid blood type for the given category")
     else:
         print("Invalid category")
 
         return advice if return_advice else ""
     class Patient:
-    def __init__(self, name="", gender="", blood_type="", age=""):
-        self.name = name
-        self.gender = gender
-        self.blood_type = blood_type
-        self.age = age
+        def __init__(self, name="", gender="", blood_type="", age=""):
+            self.name = name
+            self.gender = gender
+            self.blood_type = blood_type
+            self.age = age
 
     def display_patient_info(self):
         print(f"Name: {self.name}\nGender: {self.gender}\nBlood Type: {self.blood_type}\nAge: {self.age}")
@@ -272,3 +272,4 @@ else:
 patient = Patient()
 
 patient.run_application()
+
