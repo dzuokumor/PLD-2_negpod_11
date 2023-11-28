@@ -219,8 +219,9 @@ def dietary_advise(category, blood_type, return_advice=False):
         print("Invalid category")
 
         return advice if return_advice else ""
-    class Patient:
-        def __init__(self, name="", gender="", blood_type="", age=""):
+
+class Patient:
+    def __init__(self, name="", gender="", blood_type="", age=""):
             self.name = name
             self.gender = gender
             self.blood_type = blood_type
@@ -236,7 +237,7 @@ def dietary_advise(category, blood_type, return_advice=False):
             file.write(f"BMI: {bmi:.2f}\nCategory: {category}\n")
             file.write("Medical Advice:\n")
             file.write(advice or "")
-        print(f"Health report saved to {file_name}")
+            print(f"Health report saved to {file_name}")
 
     def run_application(self):
         category = ""
@@ -245,31 +246,31 @@ def dietary_advise(category, blood_type, return_advice=False):
         bmi = 0.0
         advice = ""
 
-        while True:
-            print("\n1. Add patient\n2. Enter your details\n3. Display patient\n4. Medical advice\n5. Save and Exit")
-            choice = input("Enter your choice (1-5): ")
+    while True:
+        print("\n1. Add patient\n2. Enter your details\n3. Display patient\n4. Medical advice\n5. Save and Exit")
+        choice = input("Enter your choice (1-5): ")
 
-            if choice == "1":
-                self.name = input("Enter your name: ")
-                self.gender = input("Enter your gender: ")
-                self.blood_type = input("Enter your blood type (O, A, B, AB): ").lower()
-                self.age = input("Enter your age: ")
-            elif choice == "2":
-                weight = float(input("Enter your weight (kg): "))
-                height = float(input("Enter your height (m): "))
-                bmi, category = bmi_calculator(weight, height)
-                print(f"Your BMI is {bmi:.2f}, and your category is {category}")
-            elif choice == "3":
-                self.display_patient_info()
-            elif choice == "4":
-                advice = dietary_advise(category, self.blood_type, return_advice=True)
-                print(advice)
-            elif choice == "5":
-                self.save_to_file(bmi, category, advice)
-                print("Exiting the application. Goodbye!")
-                break
-            else:
-                print("Invalid choice. Please enter a number between 1 and 5.")
+        if choice == "1":
+            self.name = input("Enter your name: ")
+            self.gender = input("Enter your gender: ")
+            self.blood_type = input("Enter your blood type (O, A, B, AB): ").lower()
+            self.age = input("Enter your age: ")
+        elif choice == "2":
+            weight = float(input("Enter your weight (kg): "))
+            height = float(input("Enter your height (m): "))
+            category = bmi_calculator(weight, height)
+            print(f"Your BMI is {bmi:.2f}, and your category is {category}")
+        elif choice == "3":
+            self.display_patient_info()
+        elif choice == "4":
+            advice = dietary_advise(category, self.blood_type, return_advice=True)
+            print(advice)
+        elif choice == "5":
+            self.save_to_file(bmi, category, advice)
+            print("Exiting the application. Goodbye!")
+            break
+        else:
+            print("Invalid choice. Please enter a number between 1 and 5.")
 
 
 patient = Patient()
