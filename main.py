@@ -26,5 +26,11 @@ def dietary_advise(category, blood_type, return_advice=False):
             print("""You are advised to:
                     - Consult with a healthcare professional to identify potential underlying causes of low weight.
                     - Develop a balanced and nutrient-dense meal plan to support weight gain.
-                    - Consider incorporating healthy fats, pr
+                    - Consider incorporating healthy fats, protein-rich foods, and a variety of fruits and vegetables into the diet.
+                    - Collaborate with a registered dietitian to ensure nutritional needs are met.
+                    - Rule out any medical conditions contributing to low weight.
+                    - Focus on lean protein sources such as poultry, fish, and lean meats.
+                    - Include whole grains like quinoa, brown rice, and oats.
+                    - Incorporate healthy fats from sources like olive oil, avocados, and nuts.""")
+
         
