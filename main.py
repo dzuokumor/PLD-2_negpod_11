@@ -16,3 +16,9 @@ def bmi_calculator(weight, height):
         category = "Obese"
 
     return bmi, category
+
+def dietary_advise(category, blood_type, return_advice=False):
+    category_lower = category.lower()
+    advice = ""
+
+    if category_lower == "underweight":
