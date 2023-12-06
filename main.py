@@ -3,10 +3,12 @@ import time
 
 print()
 print("Welcome to BodyMath: A smart BMI calculator")
+time.sleep(3)
 print()
-print("The all-in-one health and wellness app designed to empower individuals on their weight management journey." 
-       " This innovative app seamlessly combines BMI tracking with personalized insights based on blood type, "
-        "creating a holistic approach to achieving and maintaining a healthy weight.")
+print("The all-in-one health and wellness app designed to empower individuals on their weight management journey.") 
+print("This innovative app seamlessly combines BMI tracking with personalized insights based on blood type,")
+print("creating a holistic approach to achieving and maintaining a healthy weight.")
+time.sleep(5)
 
 class Patient:
     def __init__(self, name="", gender="", blood_type="", age=""):
