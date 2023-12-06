@@ -1,0 +1,16 @@
+Name: Branis
+Gender: Male
+Blood Type: b
+Age: 19
+BMI: 23.85
+Category: Normal weight
+Medical Advice:
+You are advised to:
+                - Focus on portion control and mindful eating to support overall health.
+                - Engage in regular physical activity for cardiovascular health and overall well-being.
+                - Schedule regular check-ups with a healthcare provider for preventive care.
+                - Consider individual health goals and consult with a healthcare professional for personalized advice.
+                - Maintain a balanced diet with a mix of protein, carbohydrates, and fats.
+                - Prioritize a variety of colorful vegetables for diverse nutrients.
+                - Include moderate amounts of lean protein sources.
+                - Choose whole, minimally processed foods over highly processed options.
