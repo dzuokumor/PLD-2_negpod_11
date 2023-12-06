@@ -1,7 +1,0 @@
-Name: mm
-Gender: M
-Blood Type: a
-Age: 20
-BMI: 0.00
-Category: 
-Medical Advice:
