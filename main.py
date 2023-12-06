@@ -1,3 +1,4 @@
+import time
 print("Welcome to BodyMath: A smart BMI calculator")
 print("This application is designed to assess Body-Mass-Index, a common metric used for gauging body weight in relation to height\n")
 
@@ -36,15 +37,20 @@ class Patient:
                 self.blood_type = input("Enter your blood type (O, A, B, AB): ").lower()
                 self.age = input("Enter your age: ")
             elif choice == "2":
-                weight = float(input("Enter your weight (kg): "))
-                height = float(input("Enter your height (m): "))
-                bmi, category = bmi_calculator(weight, height)
-                print(f"Your BMI is {bmi:.2f}, and your category is {category}")
+                try:
+                    weight = float(input("Enter your weight (kg): "))
+                    height = float(input("Enter your height (m): "))
+                    bmi, category = bmi_calculator(weight, height)
+                    print(f"Your BMI is {bmi:.2f}, and your category is {category}")
+                except ValueError:
+                    print("Invalid input! Please enter numeric values for weight and height! ")
             elif choice == "3":
                 self.display_patient_info()
+                time.sleep(10)
             elif choice == "4":
                 advice = dietary_advise(category, self.blood_type, return_advice=True)
                 print(advice)
+                time.sleep(10)
             elif choice == "5":
                 self.save_to_file(bmi, category, advice)
                 print("Exiting the application. Goodbye!")

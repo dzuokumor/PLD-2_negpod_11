@@ -1,0 +1,15 @@
+Name: Mucyo
+Gender: Male
+Blood Type: o
+Age: 20
+BMI: 24.84
+Category: Normal weight
+Medical Advice:
+You are advised to:
+                - Focus on portion control and mindful eating to support overall health.
+                - Engage in regular physical activity for cardiovascular health and overall well-being.
+                - Schedule regular check-ups with a healthcare provider for preventive care.
+                - Consider individual health goals and consult with a healthcare professional for personalized advice.
+                - Maintain a balanced diet with a mix of protein, carbohydrates, and fats.
+                - Choose lean protein sources, including fish, poultry, beans, and lentils.
+                - Prioritize a variety of colorful fruits and vegetables.
