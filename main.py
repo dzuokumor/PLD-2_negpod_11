@@ -1,8 +1,12 @@
 #!/usr/bin/python3
-
 import time
+
+print()
 print("Welcome to BodyMath: A smart BMI calculator")
-print("This application is designed to assess Body-Mass-Index, a common metric used for gauging body weight in relation to height\n")
+print()
+print("The all-in-one health and wellness app designed to empower individuals on their weight management journey. 
+        This innovative app seamlessly combines BMI tracking with personalized insights based on blood type, 
+        creating a holistic approach to achieving and maintaining a healthy weight.")
 
 class Patient:
     def __init__(self, name="", gender="", blood_type="", age=""):
@@ -46,13 +50,14 @@ class Patient:
                     print(f"Your BMI is {bmi:.2f}, and your category is {category}")
                 except ValueError:
                     print("Invalid input! Please enter numeric values for weight and height! ")
+
             elif choice == "3":
                 self.display_patient_info()
                 time.sleep(10)
             elif choice == "4":
                 advice = dietary_advise(category, self.blood_type, return_advice=True)
                 print(advice)
-                time.sleep(10)
+                time.sleep(30)
             elif choice == "5":
                 self.save_to_file(bmi, category, advice)
                 print("Exiting the application. Goodbye!")
@@ -79,7 +84,7 @@ def dietary_advise(category, blood_type, return_advice=False):
     advice = ""
 
     if category_lower == "underweight":
-        if blood_type == "o":
+        if blood_type == "o" or blood_type == "O":
             advice = """You are advised to:
                     - Consult with a healthcare professional to identify potential underlying causes of low weight.
                     - Develop a balanced and nutrient-dense meal plan to support weight gain.
@@ -89,16 +94,16 @@ def dietary_advise(category, blood_type, return_advice=False):
                     - Focus on lean protein sources such as poultry, fish, and lean meats.
                     - Include whole grains like quinoa, brown rice, and oats.
                     - Incorporate healthy fats from sources like olive oil, avocados, and nuts."""
-        elif blood_type == "a":
+        elif blood_type == "a" or blood_type == "A":
             advice = """You are advised to:
                     - Consult with a healthcare professional to identify potential underlying causes of low weight.
                     - Develop a balanced and nutrient-dense meal plan to support weight gain.
                     - Collaborate with a registered dietitian to ensure nutritional needs are met.
-                    - Rule out any medical conditions contributing to low weight. 
+                    - Rule out any medical conditions contributing to low weight.
                     - Include lean protein sources such as fish, poultry, tofu, and legumes.
                     - Incorporate whole grains like quinoa, brown rice, and oats for energy.
                     - Include sources of healthy fats, such as avocados, nuts, and olive oil."""
-        elif blood_type == "b":
+        elif blood_type == "b" or blood_type == "B":
             advice = """You are advised to:
                 - Consult with a healthcare professional to identify potential underlying causes of low weight.
                 - Develop a balanced and nutrient-dense meal plan to support weight gain.
@@ -109,7 +114,7 @@ def dietary_advise(category, blood_type, return_advice=False):
                 - Include whole grains such as brown rice and quinoa.
                 - Consider dairy or fortified plant-based alternatives for additional nutrients.
                 - Include sources of healthy fats like nuts, seeds, and olive oil."""
-        elif blood_type == "ab":
+        elif blood_type == "ab" or blood_type == "AB":
             advice = """You are advised to:
                 - Focus on portion control and mindful eating to support overall health.
                 - Engage in regular physical activity for cardiovascular health and overall well-being.
@@ -123,7 +128,7 @@ def dietary_advise(category, blood_type, return_advice=False):
             print("Invalid blood type for the given category")
 
     elif category_lower == "normal weight":
-        if blood_type == "o":
+        if blood_type == "o" or blood_type == "O":
             advice = """You are advised to:
                 - Focus on portion control and mindful eating to support overall health.
                 - Engage in regular physical activity for cardiovascular health and overall well-being.
@@ -132,7 +137,7 @@ def dietary_advise(category, blood_type, return_advice=False):
                 - Maintain a balanced diet with a mix of protein, carbohydrates, and fats.
                 - Choose lean protein sources, including fish, poultry, beans, and lentils.
                 - Prioritize a variety of colorful fruits and vegetables."""
-        elif blood_type == "a":
+        elif blood_type == "a" or blood_type == "A" :
             advice = """You are advised to:
                 - Focus on portion control and mindful eating to support overall health.
                 - Engage in regular physical activity for cardiovascular health and overall well-being.
@@ -141,7 +146,7 @@ def dietary_advise(category, blood_type, return_advice=False):
                 - Maintain a balanced diet with a variety of fruits, vegetables, lean proteins, and whole grains.
                 - Explore plant-based protein sources like beans, lentils, and tofu.
                 - Minimize processed foods and focus on whole, nutrient-dense options."""
-        elif blood_type == "b":
+        elif blood_type == "b" or blood_type == "B":
             advice = """You are advised to:
                 - Focus on portion control and mindful eating to support overall health.
                 - Engage in regular physical activity for cardiovascular health and overall well-being.
@@ -151,7 +156,7 @@ def dietary_advise(category, blood_type, return_advice=False):
                 - Prioritize a variety of colorful vegetables for diverse nutrients.
                 - Include moderate amounts of lean protein sources.
                 - Choose whole, minimally processed foods over highly processed options."""
-        elif blood_type == "ab":
+        elif blood_type == "ab" or blood_type == "AB":
             advice = """You are advised to:
                 - Maintain a balanced diet that includes a variety of food groups.
                 - Focus on portion control and mindful eating to support overall health.
@@ -162,7 +167,7 @@ def dietary_advise(category, blood_type, return_advice=False):
             print("Invalid blood type for the given category")
 
     elif category_lower == "overweight":
-        if blood_type == "o":
+        if blood_type == "o" or blood_type == "O":
             advice = """You are advised to:
                 - Adopt a balanced and calorie-controlled diet with an emphasis on whole foods.
                 - Engage in regular physical activity, incorporating both aerobic and strength-training exercises.
@@ -172,7 +177,7 @@ def dietary_advise(category, blood_type, return_advice=False):
                 - Emphasize lean protein sources for satiety.
                 - Minimize processed foods and focus on whole, nutrient-dense options.
                 - Choose complex carbohydrates in moderation."""
-        elif blood_type == "a":
+        elif blood_type == "a" or blood_type == "A":
             advice = """You are advised to:
                 - Adopt a balanced and calorie-controlled diet with an emphasis on whole foods.
                 - Engage in regular physical activity, incorporating both aerobic and strength-training exercises.
@@ -181,7 +186,7 @@ def dietary_advise(category, blood_type, return_advice=False):
                 - Be mindful of portion sizes and practice moderation.
                 - Consider incorporating more vegetarian meals with plant-based proteins.
                 - Include regular physical activity in your routine."""
-        elif blood_type == "b":
+        elif blood_type == "b" or blood_type == "B":
             advice = """You are advised to:
                 - Adopt a balanced and calorie-controlled diet with an emphasis on whole foods.
                 - Engage in regular physical activity, incorporating both aerobic and strength-training exercises.
@@ -190,7 +195,7 @@ def dietary_advise(category, blood_type, return_advice=False):
                 - Be mindful of portion sizes and practice moderation.
                 - Consider incorporating more vegetarian meals with plant-based proteins.
                 - Include regular physical activity in your routine."""
-        elif blood_type == "ab":
+        elif blood_type == "ab" or blood_type == "AB":
             advice = """You are advised to:
                 - Adopt a balanced and calorie-controlled diet with an emphasis on whole foods.
                 - Engage in regular physical activity, incorporating both aerobic and strength-training exercises.
@@ -204,14 +209,14 @@ def dietary_advise(category, blood_type, return_advice=False):
             print("Invalid blood type for the given category")
 
     elif category_lower == "obese":
-        if blood_type == "o" or blood_type == "a" or blood_type == "b":
+        if blood_type == "o" or blood_type == "a" or blood_type == "b" or blood_type == "A" or blood_type == "B" or blood_type == "O":
             advice = """You are advised to:
                 - Seek guidance from healthcare professionals for a comprehensive weight management plan.
                 - Adopt a balanced and calorie-controlled diet, emphasizing whole foods.
                 - Incorporate regular physical activity into daily routines, with a mix of aerobic and strength-training exercises.
                 - Consider behavioral counseling or support groups for weight management.
                 - Discuss potential medical interventions, such as medications or bariatric surgery, if appropriate."""
-        elif blood_type == "ab":
+        elif blood_type == "ab" or blood_type == "AB":
             advice = """You are advised to:
                 - Seek guidance from healthcare professionals for a comprehensive weight management plan.
                 - Adopt a balanced and calorie-controlled diet.
@@ -228,4 +233,3 @@ def dietary_advise(category, blood_type, return_advice=False):
 # Create a Patient instance and run the application
 patient = Patient()
 patient.run_application()
-
