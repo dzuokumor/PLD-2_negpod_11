@@ -1,3 +1,5 @@
+#!/usr/bin/python3
+
 import time
 print("Welcome to BodyMath: A smart BMI calculator")
 print("This application is designed to assess Body-Mass-Index, a common metric used for gauging body weight in relation to height\n")
