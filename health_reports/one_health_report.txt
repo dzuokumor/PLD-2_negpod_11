@@ -1,7 +1,0 @@
-Name: one
-Gender: two
-Blood Type: o
-Age: 12
-BMI: 24.69
-Category: Normal weight
-Medical Advice:

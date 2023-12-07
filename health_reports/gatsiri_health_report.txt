@@ -1,7 +1,0 @@
-Name: gatsiri
-Gender: male
-Blood Type: b
-Age: 32
-BMI: 19.29
-Category: Normal weight
-Medical Advice:

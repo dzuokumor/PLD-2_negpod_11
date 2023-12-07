@@ -1,7 +1,0 @@
-Name: havertz
-Gender: male
-Blood Type: o
-Age: 16
-BMI: 27.97
-Category: Overweight
-Medical Advice:

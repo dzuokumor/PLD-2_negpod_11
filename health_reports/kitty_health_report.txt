@@ -1,7 +1,0 @@
-Name: kitty
-Gender: female
-Blood Type: o
-Age: 20
-BMI: 27.70
-Category: Overweight
-Medical Advice:

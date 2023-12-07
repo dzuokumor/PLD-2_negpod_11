@@ -1,7 +1,0 @@
-Name: gahigi
-Gender: male
-Blood Type: o
-Age: 14
-BMI: 46.26
-Category: Obese
-Medical Advice:

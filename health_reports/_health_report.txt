@@ -1,7 +1,0 @@
-Name: 
-Gender: 
-Blood Type: 
-Age: 
-BMI: 0.00
-Category: 
-Medical Advice:

@@ -1,7 +1,0 @@
-Name: kanjogera
-Gender: female
-Blood Type: b
-Age: 33
-BMI: 0.00
-Category: 
-Medical Advice:

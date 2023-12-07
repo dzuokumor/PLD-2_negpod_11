@@ -1,7 +1,7 @@
-Name: yvan
+Name: kenny
 Gender: male
-Blood Type: a
-Age: 22
+Blood Type: o
+Age: 23
 BMI: 0.00
 Category: 
 Medical Advice:
