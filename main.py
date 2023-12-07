@@ -1,4 +1,5 @@
 import time
+import os
 
 print()
 print("Welcome to BodyMath: A smart BMI calculator")
@@ -23,7 +24,7 @@ class Patient:
 
     def save_to_file(self, bmi, category, advice):
         file_name = f"{self.name}_health_report.txt"
-         file_path = os.path.join("health_reports", file_name)
+        file_path = os.path.join("health_reports", file_name)
         with open(file_name, "w") as file:
             file.write(f"Name: {self.name}\nGender: {self.gender}\nBlood Type: {self.blood_type}\nAge: {self.age}\n")
             file.write(f"BMI: {bmi:.2f}\nCategory: {category}\n")
