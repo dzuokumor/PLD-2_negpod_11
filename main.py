@@ -1,5 +1,6 @@
 import time
 import os
+import mysql.connector
 
 print()
 print("Welcome to BodyMath: A smart BMI calculator")
