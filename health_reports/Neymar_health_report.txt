@@ -1,0 +1,7 @@
+Name: Neymar
+Gender: male
+Blood Type: o
+Age: 29
+BMI: 21.22
+Category: Normal weight
+Medical Advice:

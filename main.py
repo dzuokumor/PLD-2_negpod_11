@@ -1,7 +1,7 @@
 #!/usr/bin/python3
 import time
 import os
-import mysql.connector
+import MySQLdb
 
 print()
 print("Welcome to BodyMath: A smart BMI calculator")
@@ -36,7 +36,7 @@ class Patient:
            
     def save_to_database(self, file_name):
         try:
-            connection = mysql.connector.connect(
+            connection = MySQLdb.connect(
                 host="localhost",
                 user="Negpod11",
                 password="2406",
@@ -58,7 +58,7 @@ class Patient:
             connection.commit()
             print("Data successfully saved to the database.")
 
-        except mysql.connector.Error as err:
+        except MySQLdb.Error as err:
             print(f"Error: {err}")
 
         finally:
