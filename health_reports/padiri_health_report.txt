@@ -1,0 +1,7 @@
+Name: padiri
+Gender: male
+Blood Type: a
+Age: 55
+BMI: 21.87
+Category: Normal weight
+Medical Advice:

@@ -40,18 +40,18 @@ class Patient:
             connection = MySQLdb.connect(
                 host="localhost",
                 user="root",
-                password="your_password"
+                password="2406"
             )
 
             # Create a cursor object
             cursor = connection.cursor()
 
             # Create the 'bodymath' database if it doesn't exist
-            create_database_query = "CREATE DATABASE IF NOT EXISTS bodymath"
+            create_database_query = "CREATE DATABASE IF NOT EXISTS bodymaths"
             cursor.execute(create_database_query)
 
             # Use the 'bodymath' database
-            cursor.execute("USE bodymath")
+            cursor.execute("USE bodymaths")
 
             # Create the 'Patient' table if it doesn't exist
             create_patient_table_query = (
