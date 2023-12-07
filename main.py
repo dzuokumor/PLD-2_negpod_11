@@ -84,15 +84,7 @@ class Patient:
         ");"
         )
         cursor.execute(create_report_table_query)  
-        insert_data_query = ("INSERT INTO Patient (name, gender, blood_type, age) VALUES (%s, %s, %s, %s);")
-        data = (self.name, self.gender, self.blood_type, self.age)
-        print(f"Executing SQL query: {insert_data_query}")
-        print(f"Data to insert: {data}")
-        cursor.execute(insert_data_query, data)
-        connection.commit()
-        cursor.close()
-        connection.close()
-      
+       
     
         while True:
             print("\n1. Add patient\n2. Enter your details for BMI calculation\n3. Display patient information\n4. Medical advice\n5. Dietary advice\n6. Access your exercise routine\n7. Meet professional personnels and nutritionists\n8. Save and Exit")
@@ -129,10 +121,20 @@ class Patient:
                 print(doctor)
             elif choice == "8":
                 self.save_to_file(bmi, category, advice)
+                insert_data_query = ("INSERT INTO Patient (name, gender, blood_type, age) VALUES (%s, %s, %s, %s);")
+                data = (self.name, self.gender, self.blood_type, self.age)
+                print(f"Executing SQL query: {insert_data_query}")
+                print(f"Data to insert: {data}")
+                cursor.execute(insert_data_query, data)
+                connection.commit()
                 print("Exiting the application. Goodbye!")
                 break
             else:
                 print("Invalid choice. Please enter a number between 1 and 8.")
+
+         cursor.close()
+         connection.close()
+      
       
 def bmi_calculator(weight, height):
     bmi = weight / (height ** 2)
