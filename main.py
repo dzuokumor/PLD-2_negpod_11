@@ -55,6 +55,13 @@ class Patient:
         ");"
     )
     cursor.execute(create_report_table_query)
+    insert_data_query = ( "INSERT INTO patient (name, gender, blood_type, age) VALUES (%s, %s, %s, %s);")
+    data = (self.name, self.gender, self.blood_type, self.age)
+    cursor.execute(insert_data_query, data)
+    connection.commit()
+
+    cursor.close()
+    connection.close()
 
     def __init__(self, name="", gender="", blood_type="", age=""):
         self.name = name
