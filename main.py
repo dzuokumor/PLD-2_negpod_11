@@ -45,50 +45,53 @@ class Patient:
         advice = ""
         diet=""
         sports=""
-        connection = MySQLdb.connect(
-        host="localhost",
-        user="root",
-        password="2406",
-        port=3306)
-        
-        # Create a cursor object
-        cursor = connection.cursor()
-        cursor.execute("select @@version")
-        data = cursor.fetchone()
-        print("Connection to database successfully made", data)
-        create_database_query = "CREATE DATABASE IF NOT EXISTS bodymaths;"
-        cursor.execute(create_database_query)
-        cursor.execute("USE bodymaths;")
-
-            # Create the 'Patient' table if it doesn't exist
-        create_patient_table_query = (
-        "CREATE TABLE IF NOT EXISTS Patient("
-        " id INT AUTO_INCREMENT PRIMARY KEY,"
-        "name VARCHAR(255) NOT NULL,"
-        "gender VARCHAR(10) NOT NULL,"
-        "blood_type VARCHAR(5) NOT NULL,"
-        "age INT NOT NULL"
-        ");"
-         )
-        cursor.execute(create_patient_table_query)
-
-            # Create the 'report' table if it doesn't exist
-        create_report_table_query = (
-        "CREATE TABLE IF NOT EXISTS report ("
-        "id INT AUTO_INCREMENT PRIMARY KEY,"
-        "name VARCHAR(255) NOT NULL,"
-        "gender VARCHAR(10) NOT NULL,"
-        "blood_type VARCHAR(5) NOT NULL,"
-        "age INT NOT NULL,"
-        "patient_reports TEXT NOT NULL"
-        ");"
-        )
-        cursor.execute(create_report_table_query)
-        insert_data_query = ("INSERT INTO patient (name, gender, blood_type, age) VALUES (%s, %s, %s, %s);")
-        data = (self.name, self.gender, self.blood_type, self.age)
-        cursor.execute(insert_data_query, data)
-        connection.commit()
-
+        try: 
+            connection = MySQLdb.connect(
+            host="localhost",
+            user="root",
+            password="2406",
+            port=3306)
+            
+            # Create a cursor object
+            cursor = connection.cursor()
+            cursor.execute("select @@version")
+            data = cursor.fetchone()
+            print("Connection to database successfully made", data)
+            create_database_query = "CREATE DATABASE IF NOT EXISTS bodymaths;"
+            cursor.execute(create_database_query)
+            cursor.execute("USE bodymaths;")
+    
+                # Create the 'Patient' table if it doesn't exist
+            create_patient_table_query = (
+            "CREATE TABLE IF NOT EXISTS Patient("
+            " id INT AUTO_INCREMENT PRIMARY KEY,"
+            "name VARCHAR(255) NOT NULL,"
+            "gender VARCHAR(10) NOT NULL,"
+            "blood_type VARCHAR(5) NOT NULL,"
+            "age INT NOT NULL"
+            ");"
+             )
+            cursor.execute(create_patient_table_query)
+    
+                # Create the 'report' table if it doesn't exist
+            create_report_table_query = (
+            "CREATE TABLE IF NOT EXISTS report ("
+            "id INT AUTO_INCREMENT PRIMARY KEY,"
+            "name VARCHAR(255) NOT NULL,"
+            "gender VARCHAR(10) NOT NULL,"
+            "blood_type VARCHAR(5) NOT NULL,"
+            "age INT NOT NULL,"
+            "patient_reports TEXT NOT NULL"
+            ");"
+            )
+            cursor.execute(create_report_table_query)
+            insert_data_query = ("INSERT INTO patient (name, gender, blood_type, age) VALUES (%s, %s, %s, %s);")
+            data = (self.name, self.gender, self.blood_type, self.age)
+            cursor.execute(insert_data_query, data)
+            connection.commit()
+        finally: 
+            cursor.close()
+            connection.close()
     
         while True:
             print("\n1. Add patient\n2. Enter your details for BMI calculation\n3. Display patient information\n4. Medical advice\n5. Dietary advice\n6. Access your exercise routine\n7. Meet professional personnels and nutritionists\n8. Save and Exit")
