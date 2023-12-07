@@ -86,6 +86,8 @@ class Patient:
         cursor.execute(create_report_table_query)  
         insert_data_query = ("INSERT INTO patient (name, gender, blood_type, age) VALUES (%s, %s, %s, %s);")
         data = (self.name, self.gender, self.blood_type, self.age)
+        print(f"Executing SQL query: {insert_data_query}")
+        print(f"Data to insert: {data}")
         cursor.execute(insert_data_query, data)
         connection.commit()
         cursor.close()
