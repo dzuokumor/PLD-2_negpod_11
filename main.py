@@ -293,6 +293,9 @@ def dietary_advice(category, blood_type, return_diet=False):
         elif blood_type == "b" or blood_type == "B":
             diet = """ Dietary addice:
             general idea:
+            - Focus on lean proteins like meat, poultry, and fish.
+            - Include vegetables and fruits, with an emphasis on green leafy vegetables.
+            - Consider snacks with nuts or seeds.
           
 
             meal plan:
@@ -358,6 +361,9 @@ def dietary_advice(category, blood_type, return_diet=False):
         elif blood_type == "ab" or blood_type == "AB":
             diet = """ Dietary addice:
             general idea:
+            - Focus on lean proteins like meat, poultry, and fish.
+            - Include vegetables and fruits, with an emphasis on green leafy vegetables.
+            - Consider snacks with nuts or seeds.
             
 
             meal plan:
