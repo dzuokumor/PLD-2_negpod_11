@@ -48,10 +48,10 @@ class Patient:
 
             # Insert data into the table
             insert_data_query = (
-                "INSERT INTO report (name, gender, blood_type, age, health_report) "
+                "INSERT INTO report (name, gender, blood_type, age, patient_reports) "
                 "VALUES (%s, %s, %s, %s, %s, %s, %s)"
             )
-            data = (self.name, self.gender, self.blood_type, int(self.age), bmi, file_content)
+            data = (self.name, self.gender, self.blood_type, int(self.age), file_content)
             cursor.execute(insert_data_query, data)
 
             # Commit changes and close the connection
