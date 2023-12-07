@@ -1,0 +1,7 @@
+Name: igor
+Gender: male
+Blood Type: a
+Age: 25
+BMI: 22.07
+Category: Normal weight
+Medical Advice:

@@ -14,7 +14,48 @@ time.sleep(1)
 print("creating a holistic approach to achieving and maintaining a healthy weight.")
 time.sleep(1)
 
+
 class Patient:
+    connection = MySQLdb.connect(
+    host="localhost",
+    user="root",
+    password="2406",
+    port=3306
+    )
+    # Create a cursor object
+    cursor = connection.cursor()
+    cursor.execute("select @@version")
+    data = cursor.fetchone()
+    print("Connection to database successfully made", data)
+    create_database_query = "CREATE DATABASE IF NOT EXISTS bodymaths;"
+    cursor.execute(create_database_query)
+    cursor.execute("USE bodymaths;")
+
+            # Create the 'Patient' table if it doesn't exist
+    create_patient_table_query = (
+        "CREATE TABLE IF NOT EXISTS Patient("
+        " id INT AUTO_INCREMENT PRIMARY KEY,"
+        "name VARCHAR(255) NOT NULL,"
+        "gender VARCHAR(10) NOT NULL,"
+        "blood_type VARCHAR(5) NOT NULL,"
+        "age INT NOT NULL"
+        ");"
+    )
+    cursor.execute(create_patient_table_query)
+
+            # Create the 'report' table if it doesn't exist
+    create_report_table_query = (
+        "CREATE TABLE IF NOT EXISTS report ("
+        "id INT AUTO_INCREMENT PRIMARY KEY,"
+        "name VARCHAR(255) NOT NULL,"
+        "gender VARCHAR(10) NOT NULL,"
+        "blood_type VARCHAR(5) NOT NULL,"
+        "age INT NOT NULL,"
+        "patient_reports TEXT NOT NULL"
+        ");"
+    )
+    cursor.execute(create_report_table_query)
+
     def __init__(self, name="", gender="", blood_type="", age=""):
         self.name = name
         self.gender = gender
@@ -34,66 +75,6 @@ class Patient:
             file.write("Medical Advice:\n")
             file.write(advice or "")
            
-    def save_to_database(self, file_name):
-            # Establish a connection to MySQL
-            connection = MySQLdb.connect(
-                host="localhost",
-                user="root",
-                password="2406",
-                port="3306"
-            )
-
-            # Create a cursor object
-            cursor = connection.cursor()
-
-            # Create the 'bodymath' database if it doesn't exist
-            create_database_query = "CREATE DATABASE IF NOT EXISTS bodymaths;"
-            cursor.execute(create_database_query)
-
-            # Use the 'bodymath' database
-            cursor.execute("USE bodymaths;")
-
-            # Create the 'Patient' table if it doesn't exist
-            create_patient_table_query = (
-                "CREATE TABLE IF NOT EXISTS Patient ("
-                "id INT AUTO_INCREMENT PRIMARY KEY,"
-                "name VARCHAR(255) NOT NULL,"
-                "gender VARCHAR(10) NOT NULL,"
-                "blood_type VARCHAR(5) NOT NULL,"
-                "age INT NOT NULL"
-                ");"
-            )
-            cursor.execute(create_patient_table_query)
-
-            # Create the 'report' table if it doesn't exist
-            create_report_table_query = (
-                "CREATE TABLE IF NOT EXISTS report ("
-                "id INT AUTO_INCREMENT PRIMARY KEY,"
-                "name VARCHAR(255) NOT NULL,"
-                "gender VARCHAR(10) NOT NULL,"
-                "blood_type VARCHAR(5) NOT NULL,"
-                "age INT NOT NULL,"
-                "patient_reports TEXT NOT NULL"
-                ");"
-            )
-            cursor.execute(create_report_table_query)
-
-            # Read content from the file
-            with open(file_name, "r") as file:
-                file_content = file.read()
-
-            # Insert data into the 'report' table
-            insert_data_query = (
-                "INSERT INTO report (name, gender, blood_type, age, patient_reports) VALUES (%s, %s, %s, %s, %s);"
-            )
-            data = (self.name, self.gender, self.blood_type, int(self.age), file_content)
-            cursor.execute(insert_data_query, data)
-
-            # Commit changes and close the connection
-            connection.commit()
-
-            cursor.close()
-            connection.close()
 
     def run_application(self):
         category = ""
@@ -130,8 +111,8 @@ class Patient:
                 print(advice)
                 time.sleep(30)
             elif choice == "5":
-                diet = dietary_advice(category, self.blood_type, return_diet=True)
-                print(diet)
+               diet = dietary_advice(category, self.blood_type, return_diet=True)
+               print(diet)
             elif choice == "6":
                 sports = exercises(category, return_sports=True)
                 print(sports)
@@ -139,8 +120,11 @@ class Patient:
                 print(doctor)
             elif choice == "8":
                 self.save_to_file(bmi, category, advice)
-                if 'file_name' in locals():
-                    self.save_to_database(file_name)
+                insert_data_query = (
+                "INSERT INTO patient (name, gender, blood_type, age) VALUES (%s, %s, %s, %s);")
+                data = (self.name, self.gender, self.blood_type, self.age)
+                cursor.execute(insert_data_query, data)
+                connection.commit()
                 print("Exiting the application. Goodbye!")
                 break
             else:

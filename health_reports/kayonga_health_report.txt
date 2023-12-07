@@ -1,0 +1,7 @@
+Name: kayonga
+Gender: male
+Blood Type: b
+Age: 34
+BMI: 28.09
+Category: Overweight
+Medical Advice:

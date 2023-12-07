@@ -1,0 +1,7 @@
+Name: austin
+Gender: male
+Blood Type: a
+Age: 22
+BMI: 0.00
+Category: 
+Medical Advice:

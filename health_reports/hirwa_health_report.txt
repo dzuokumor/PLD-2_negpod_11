@@ -1,0 +1,7 @@
+Name: hirwa
+Gender: male
+Blood Type: o
+Age: 44
+BMI: 18.49
+Category: Underweight
+Medical Advice:

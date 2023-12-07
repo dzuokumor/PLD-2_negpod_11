@@ -1,7 +1,7 @@
 Name: kanjogera
 Gender: female
-Blood Type: o
-Age: 22
-BMI: 25.78
-Category: Overweight
+Blood Type: b
+Age: 33
+BMI: 0.00
+Category: 
 Medical Advice:

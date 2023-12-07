@@ -1,0 +1,7 @@
+Name: 	test
+Gender: test
+Blood Type: o
+Age: 13
+BMI: 0.00
+Category: 
+Medical Advice:
