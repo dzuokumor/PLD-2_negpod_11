@@ -31,6 +31,36 @@ class Patient:
             file.write(f"BMI: {bmi:.2f}\nCategory: {category}\n")
             file.write("Medical Advice:\n")
             file.write(advice or "")
+           
+      def save_to_database(self, bmi, category, advice):
+        try:
+            connection = mysql.connector.connect(
+                host="localhost",
+                user="Negpod11",
+                password="2406",
+                database="bodymath"
+            )
+            cursor = connection.cursor()
+
+            # Insert data into the table
+            insert_data_query = (
+                "INSERT INTO patient_data (name, gender, blood_type, age, bmi, category, advice) "
+                "VALUES (%s, %s, %s, %s, %s, %s, %s)"
+            )
+            data = (self.name, self.gender, self.blood_type, int(self.age), bmi, category, advice)
+            cursor.execute(insert_data_query, data)
+
+            # Commit changes and close the connection
+            connection.commit()
+            print("Data successfully saved to the database.")
+
+        except mysql.connector.Error as err:
+            print(f"Error: {err}")
+
+        finally:
+            if connection.is_connected():
+                cursor.close()
+                connection.close()    
 
     def run_application(self):
         category = ""
@@ -40,7 +70,7 @@ class Patient:
         advice = ""
         diet=""
         sports=""
-
+    
         while True:
             print("\n1. Add patient\n2. Enter your details for BMI calculation\n3. Display patient information\n4. Medical advice\n5. Dietary advice\n6. Access your exercise routine\n7. Meet professional personnels and nutritionists\n8. Save and Exit")
             choice = input("Enter your choice (1-8): ")
