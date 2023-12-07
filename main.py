@@ -35,10 +35,9 @@ class Patient:
             file.write(advice or "")
            
     def save_to_database(self, file_name):
-        try:
             connection = MySQLdb.connect(
                 host="localhost",
-                user="Negpod11",
+                user="root",
                 password="2406",
                 database="bodymath"
             )
@@ -51,20 +50,14 @@ class Patient:
                 "INSERT INTO report (name, gender, blood_type, age, patient_reports) "
                 "VALUES (%s, %s, %s, %s, %s, %s, %s)"
             )
-            data = (self.name, self.gender, self.blood_type, int(self.age), file_content)
+            data = (self.name, self.gender, self.blood_type, self.age, file_content)
             cursor.execute(insert_data_query, data)
 
             # Commit changes and close the connection
             connection.commit()
-            print("Data successfully saved to the database.")
 
-        except MySQLdb.Error as err:
-            print(f"Error: {err}")
-
-        finally:
-            if connection.is_connected():
-                cursor.close()
-                connection.close()    
+            cursor.close()
+            connection.close()    
 
     def run_application(self):
         category = ""
