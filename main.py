@@ -16,15 +16,43 @@ time.sleep(1)
 
 
 class Patient:
-    connection = MySQLdb.connect(
-    host="localhost",
-    user="root",
-    password="2406",
-    port=3306
-    )
-    # Create a cursor object
-    cursor = connection.cursor()
-    cursor.execute("select @@version")
+
+    def __init__(self, name="", gender="", blood_type="", age=""):
+        self.name = name
+        self.gender = gender
+        self.blood_type = blood_type
+        self.age = age
+
+    def display_patient_info(self):
+        print(f"Name: {self.name}\nGender: {self.gender}\nBlood Type: {self.blood_type}\nAge: {self.age}")
+
+    def save_to_file(self, bmi, category, advice):
+        os.makedirs("health_reports", exist_ok=True)
+        file_name = f"{self.name}_health_report.txt"
+        file_path = os.path.join("health_reports", file_name)
+        with open(file_path, "w") as file:
+            file.write(f"Name: {self.name}\nGender: {self.gender}\nBlood Type: {self.blood_type}\nAge: {self.age}\n")
+            file.write(f"BMI: {bmi:.2f}\nCategory: {category}\n")
+            file.write("Medical Advice:\n")
+            file.write(advice or "")
+           
+
+    def run_application(self):
+        category = ""
+        weight = 0.0
+        height = 0.0
+        bmi = 0.0
+        advice = ""
+        diet=""
+        sports=""
+        connection = MySQLdb.connect(
+        host="localhost",
+        user="root",
+        password="2406",
+        port=3306)
+        # Create a cursor object
+        cursor = connection.cursor()
+        cursor.execute("select @@version")
     data = cursor.fetchone()
     print("Connection to database successfully made", data)
     create_database_query = "CREATE DATABASE IF NOT EXISTS bodymaths;"
@@ -55,42 +83,7 @@ class Patient:
         ");"
     )
     cursor.execute(create_report_table_query)
-    insert_data_query = ( "INSERT INTO patient (name, gender, blood_type, age) VALUES (%s, %s, %s, %s);")
-    data = (self.name, self.gender, self.blood_type, self.age)
-    cursor.execute(insert_data_query, data)
-    connection.commit()
 
-    cursor.close()
-    connection.close()
-
-    def __init__(self, name="", gender="", blood_type="", age=""):
-        self.name = name
-        self.gender = gender
-        self.blood_type = blood_type
-        self.age = age
-
-    def display_patient_info(self):
-        print(f"Name: {self.name}\nGender: {self.gender}\nBlood Type: {self.blood_type}\nAge: {self.age}")
-
-    def save_to_file(self, bmi, category, advice):
-        os.makedirs("health_reports", exist_ok=True)
-        file_name = f"{self.name}_health_report.txt"
-        file_path = os.path.join("health_reports", file_name)
-        with open(file_path, "w") as file:
-            file.write(f"Name: {self.name}\nGender: {self.gender}\nBlood Type: {self.blood_type}\nAge: {self.age}\n")
-            file.write(f"BMI: {bmi:.2f}\nCategory: {category}\n")
-            file.write("Medical Advice:\n")
-            file.write(advice or "")
-           
-
-    def run_application(self):
-        category = ""
-        weight = 0.0
-        height = 0.0
-        bmi = 0.0
-        advice = ""
-        diet=""
-        sports=""
     
         while True:
             print("\n1. Add patient\n2. Enter your details for BMI calculation\n3. Display patient information\n4. Medical advice\n5. Dietary advice\n6. Access your exercise routine\n7. Meet professional personnels and nutritionists\n8. Save and Exit")
