@@ -132,8 +132,8 @@ class Patient:
             else:
                 print("Invalid choice. Please enter a number between 1 and 8.")
 
-         cursor.close()
-         connection.close()
+        cursor.close()
+        connection.close()
       
       
 def bmi_calculator(weight, height):
