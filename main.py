@@ -45,46 +45,45 @@ class Patient:
         advice = ""
         diet=""
         sports=""
-        try: 
-            connection = MySQLdb.connect(
-            host="localhost",
-            user="root",
-            password="2406",
-            port=3306)
+        connection = MySQLdb.connect(
+        host="localhost",
+        user="root",
+        password="2406",
+        port=3306)
             
-            # Create a cursor object
-            cursor = connection.cursor()
-            cursor.execute("select @@version")
-            data = cursor.fetchone()
-            print("Connection to database successfully made", data)
-            create_database_query = "CREATE DATABASE IF NOT EXISTS bodymaths;"
-            cursor.execute(create_database_query)
-            cursor.execute("USE bodymaths;")
+        # Create a cursor object
+        cursor = connection.cursor()
+        cursor.execute("select @@version")
+        data = cursor.fetchone()
+        print("Connection to database successfully made", data)
+        create_database_query = "CREATE DATABASE IF NOT EXISTS bodymaths;"
+        cursor.execute(create_database_query)
+        cursor.execute("USE bodymaths;")
     
-                # Create the 'Patient' table if it doesn't exist
-            create_patient_table_query = (
-            "CREATE TABLE IF NOT EXISTS Patient("
-            " id INT AUTO_INCREMENT PRIMARY KEY,"
-            "name VARCHAR(255) NOT NULL,"
-            "gender VARCHAR(10) NOT NULL,"
-            "blood_type VARCHAR(5) NOT NULL,"
-            "age INT NOT NULL"
-            ");"
-             )
-            cursor.execute(create_patient_table_query)
+        # Create the 'Patient' table if it doesn't exist
+        create_patient_table_query = (
+        "CREATE TABLE IF NOT EXISTS Patient("
+        " id INT AUTO_INCREMENT PRIMARY KEY,"
+        "name VARCHAR(255) NOT NULL,"
+        "gender VARCHAR(10) NOT NULL,"
+        "blood_type VARCHAR(5) NOT NULL,"
+        "age INT NOT NULL"
+        ");"
+            )
+        cursor.execute(create_patient_table_query)
     
                 # Create the 'report' table if it doesn't exist
-            create_report_table_query = (
-            "CREATE TABLE IF NOT EXISTS report ("
-            "id INT AUTO_INCREMENT PRIMARY KEY,"
-            "name VARCHAR(255) NOT NULL,"
-            "gender VARCHAR(10) NOT NULL,"
-            "blood_type VARCHAR(5) NOT NULL,"
-            "age INT NOT NULL,"
-            "patient_reports TEXT NOT NULL"
-            ");"
-            )
-            cursor.execute(create_report_table_query)
+        create_report_table_query = (
+        "CREATE TABLE IF NOT EXISTS report ("
+        "id INT AUTO_INCREMENT PRIMARY KEY,"
+        "name VARCHAR(255) NOT NULL,"
+        "gender VARCHAR(10) NOT NULL,"
+        "blood_type VARCHAR(5) NOT NULL,"
+        "age INT NOT NULL,"
+        "patient_reports TEXT NOT NULL"
+        ");"
+        )
+        cursor.execute(create_report_table_query)                                            
       
     
         while True:
@@ -130,9 +129,8 @@ class Patient:
                 break
             else:
                 print("Invalid choice. Please enter a number between 1 and 8.")
-          finally: 
-            cursor.close()
-            connection.close()
+        cursor.close()
+        connection.close()
 def bmi_calculator(weight, height):
     bmi = weight / (height ** 2)
 
