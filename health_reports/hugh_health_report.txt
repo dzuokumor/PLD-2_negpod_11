@@ -1,0 +1,7 @@
+Name: hugh
+Gender: male
+Blood Type: b
+Age: 60
+BMI: 26.64
+Category: Overweight
+Medical Advice:
