@@ -1,0 +1,24 @@
+Name: kennedy
+Gender: male
+Blood Type: a
+Age: 10
+BMI: 18.13
+Category: Underweight
+Medical Advice:
+You are advised to:
+            Increase Caloric Intake:
+            Consume a variety of nutrient-dense foods to boost calorie intake.
+            Include healthy fats such as avocados, nuts, seeds, and olive oil.
+
+            Protein-Rich Foods:
+            Include lean protein sources like poultry, fish, eggs, beans, and dairy to support muscle development.
+
+            Frequent Meals:
+            Eat smaller, more frequent meals throughout the day to increase overall calorie consumption.
+
+            Strength Training:
+            Engage in strength training exercises to build muscle mass.
+
+            Nutrient-Rich Snacks:
+            Snack on high-calorie, nutrient-dense foods like Greek yogurt, trail mix, and cheese.
+            

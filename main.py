@@ -48,7 +48,7 @@ class Patient:
 
             # Insert data into the table
             insert_data_query = (
-                "INSERT INTO patient_data (name, gender, blood_type, age, health_report) "
+                "INSERT INTO report (name, gender, blood_type, age, health_report) "
                 "VALUES (%s, %s, %s, %s, %s, %s, %s)"
             )
             data = (self.name, self.gender, self.blood_type, int(self.age), bmi, file_content)
@@ -109,8 +109,9 @@ class Patient:
             elif choice == "7":
                 print(doctor)
             elif choice == "8":
-                file_name=self.save_to_file(bmi, category, advice)
-                self.save_to_database(file_name)
+                self.save_to_file(bmi, category, advice)
+                if 'file_name' in locals():
+                    self.save_to_database(file_name)
                 print("Exiting the application. Goodbye!")
                 break
             else:
@@ -1439,4 +1440,3 @@ def exercises(category,return_sports=False):
 # Create a Patient instance and run the application
 patient = Patient()
 patient.run_application()
-
