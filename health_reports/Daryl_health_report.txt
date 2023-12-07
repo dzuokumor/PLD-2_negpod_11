@@ -1,0 +1,7 @@
+Name: Daryl
+Gender: male
+Blood Type: o
+Age: 19
+BMI: 23.94
+Category: Normal weight
+Medical Advice:

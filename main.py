@@ -39,7 +39,7 @@ class Patient:
             connection = MySQLdb.connect(
                 host="localhost",
                 user="root",
-                password="2406"
+                password="2406",
                 port="3306"
             )
 
