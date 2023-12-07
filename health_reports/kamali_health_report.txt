@@ -1,0 +1,31 @@
+Name: kamali
+Gender: female
+Blood Type: ab
+Age: 45
+BMI: 27.97
+Category: Overweight
+Medical Advice:
+You are advised to:
+
+            Control Calorie :
+            Create a slight calorie deficit by consuming fewer calories than expended.
+
+            Whole Foods:
+            Choose whole, minimally processed foods to ensure nutrient intake.
+
+            High-Fiber Foods:
+            Include fiber-rich foods like fruits, vegetables, and whole grains to promote satiety.
+
+            Lean Proteins:
+            Opt for lean protein sources to support muscle maintenance during weight loss.
+
+            Limit Added Sugars and Processed Foods:
+            Reduce intake of sugary beverages, snacks, and highly processed foods.
+
+            Regular Exercise:
+            Engage in a combination of aerobic exercises and strength training for effective weight management.
+
+                
+        else:
+            print("Invalid blood type for the given category")
+            
