@@ -1,0 +1,26 @@
+Name: Hubert
+Gender: Male
+Blood Type: ab
+Age: 20
+BMI: 32.32
+Category: Obese
+Medical Advice:
+ You are advised to:
+            Medical Supervision:
+            -Seek medical supervision for a comprehensive weight management plan.
+
+            Gradual Weight Loss:
+            -Aim for gradual, sustainable weight loss rather than rapid changes.
+
+            Balanced Diet:
+            -Emphasize a well-balanced diet with appropriate portion control.
+
+            Behavioral Changes:
+            -Address behavioral aspects of eating, such as emotional eating or mindless snacking.
+
+            Regular Physical Activity:
+            -Incorporate regular and varied physical activities to support weight loss.
+
+            Seek nutritional Counseling:
+            -Consult with a registered dietitian for personalized dietary guidance.
+                

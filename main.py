@@ -63,7 +63,7 @@ class Patient:
                 time.sleep(30)
             elif choice == "5":
                 diet = dietary_advice(category, self.blood_type, return_diet=True)
-               print(diet)
+                print(diet)
             elif choice == "6":
                 sports = exercises(category, return_sports=True)
                 print(sports)
@@ -1399,3 +1399,4 @@ def exercises(category,return_sports=False):
 # Create a Patient instance and run the application
 patient = Patient()
 patient.run_application()
+
