@@ -108,6 +108,7 @@ class Patient:
                 print(doctor)
             elif choice == "8":
                 self.save_to_file(bmi, category, advice)
+                self.save_to_database(file_name)
                 print("Exiting the application. Goodbye!")
                 break
             else:
