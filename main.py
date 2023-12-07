@@ -35,12 +35,12 @@ class Patient:
             file.write(advice or "")
            
     def save_to_database(self, file_name):
-        try:
             # Establish a connection to MySQL
             connection = MySQLdb.connect(
                 host="localhost",
                 user="root",
                 password="2406"
+                port="3306"
             )
 
             # Create a cursor object
@@ -84,20 +84,14 @@ class Patient:
 
             # Insert data into the 'report' table
             insert_data_query = (
-                "INSERT INTO report (name, gender, blood_type, age, patient_reports) "
-                "VALUES (%s, %s, %s, %s, %s);"
+                "INSERT INTO report (name, gender, blood_type, age, patient_reports) VALUES (%s, %s, %s, %s, %s);"
             )
             data = (self.name, self.gender, self.blood_type, int(self.age), file_content)
             cursor.execute(insert_data_query, data)
 
             # Commit changes and close the connection
             connection.commit()
-            print("Data successfully saved to the database.")
 
-        except MySQLdb.Error as err:
-            print(f"Error: {err}")
-
-        finally:
             cursor.close()
             connection.close()
 
@@ -150,7 +144,7 @@ class Patient:
                 print("Exiting the application. Goodbye!")
                 break
             else:
-                print("Invalid choice. Please enter a number between 1 and 5.")
+                print("Invalid choice. Please enter a number between 1 and 8.")
 
 def bmi_calculator(weight, height):
     bmi = weight / (height ** 2)
