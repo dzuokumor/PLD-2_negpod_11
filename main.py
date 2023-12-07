@@ -43,7 +43,7 @@ class Patient:
 
         while True:
             print("\n1. Add patient\n2. Enter your details for BMI calculation\n3. Display patient information\n4. Medical advice\n5. Dietary advice\n6. Access your exercise routine\n7. Meet professional personnels and nutritionists\n8. Save and Exit")
-            choice = input("Enter your choice (1-5): ")
+            choice = input("Enter your choice (1-8): ")
 
             if choice == "1":
                 self.name = input("Enter your name: ")
