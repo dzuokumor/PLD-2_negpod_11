@@ -1,0 +1,7 @@
+Name: dada
+Gender: female
+Blood Type: ab
+Age: 25
+BMI: 15.78
+Category: Underweight
+Medical Advice:

@@ -47,11 +47,11 @@ class Patient:
             cursor = connection.cursor()
 
             # Create the 'bodymath' database if it doesn't exist
-            create_database_query = "CREATE DATABASE IF NOT EXISTS bodymaths"
+            create_database_query = "CREATE DATABASE IF NOT EXISTS bodymaths;"
             cursor.execute(create_database_query)
 
             # Use the 'bodymath' database
-            cursor.execute("USE bodymaths")
+            cursor.execute("USE bodymaths;")
 
             # Create the 'Patient' table if it doesn't exist
             create_patient_table_query = (
@@ -61,7 +61,7 @@ class Patient:
                 "gender VARCHAR(10) NOT NULL,"
                 "blood_type VARCHAR(5) NOT NULL,"
                 "age INT NOT NULL"
-                ")"
+                ");"
             )
             cursor.execute(create_patient_table_query)
 
@@ -74,7 +74,7 @@ class Patient:
                 "blood_type VARCHAR(5) NOT NULL,"
                 "age INT NOT NULL,"
                 "patient_reports TEXT NOT NULL"
-                ")"
+                ");"
             )
             cursor.execute(create_report_table_query)
 
@@ -85,7 +85,7 @@ class Patient:
             # Insert data into the 'report' table
             insert_data_query = (
                 "INSERT INTO report (name, gender, blood_type, age, patient_reports) "
-                "VALUES (%s, %s, %s, %s, %s)"
+                "VALUES (%s, %s, %s, %s, %s);"
             )
             data = (self.name, self.gender, self.blood_type, int(self.age), file_content)
             cursor.execute(insert_data_query, data)
