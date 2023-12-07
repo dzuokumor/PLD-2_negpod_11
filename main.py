@@ -32,7 +32,7 @@ class Patient:
             file.write("Medical Advice:\n")
             file.write(advice or "")
            
-      def save_to_database(self, bmi, category, advice):
+      def save_to_database(self, file_name):
         try:
             connection = mysql.connector.connect(
                 host="localhost",
@@ -41,13 +41,15 @@ class Patient:
                 database="bodymath"
             )
             cursor = connection.cursor()
+            with open(file_name, "r") as file:
+                file_content = file.read()
 
             # Insert data into the table
             insert_data_query = (
-                "INSERT INTO patient_data (name, gender, blood_type, age, bmi, category, advice) "
+                "INSERT INTO patient_data (name, gender, blood_type, age, health_report) "
                 "VALUES (%s, %s, %s, %s, %s, %s, %s)"
             )
-            data = (self.name, self.gender, self.blood_type, int(self.age), bmi, category, advice)
+            data = (self.name, self.gender, self.blood_type, int(self.age), bmi, file_content)
             cursor.execute(insert_data_query, data)
 
             # Commit changes and close the connection
