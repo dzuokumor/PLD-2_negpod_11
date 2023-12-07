@@ -50,6 +50,7 @@ class Patient:
         user="root",
         password="2406",
         port=3306)
+        
         # Create a cursor object
         cursor = connection.cursor()
         cursor.execute("select @@version")
@@ -83,6 +84,10 @@ class Patient:
         ");"
         )
         cursor.execute(create_report_table_query)
+        insert_data_query = ("INSERT INTO patient (name, gender, blood_type, age) VALUES (%s, %s, %s, %s);")
+        data = (self.name, self.gender, self.blood_type, self.age)
+        cursor.execute(insert_data_query, data)
+        connection.commit()
 
     
         while True:
@@ -120,11 +125,6 @@ class Patient:
                 print(doctor)
             elif choice == "8":
                 self.save_to_file(bmi, category, advice)
-                insert_data_query = (
-                "INSERT INTO patient (name, gender, blood_type, age) VALUES (%s, %s, %s, %s);")
-                data = (self.name, self.gender, self.blood_type, self.age)
-                cursor.execute(insert_data_query, data)
-                connection.commit()
                 print("Exiting the application. Goodbye!")
                 break
             else:
