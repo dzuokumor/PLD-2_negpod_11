@@ -1,3 +1,4 @@
+#!/usr/bin/python3
 import time
 import os
 import mysql.connector
@@ -33,7 +34,7 @@ class Patient:
             file.write("Medical Advice:\n")
             file.write(advice or "")
            
-      def save_to_database(self, file_name):
+    def save_to_database(self, file_name):
         try:
             connection = mysql.connector.connect(
                 host="localhost",
