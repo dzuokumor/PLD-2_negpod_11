@@ -5,7 +5,7 @@ import MySQLdb
 
 print()
 print("Welcome to BodyMath: A smart BMI calculator")
-time.sleep(3)
+time.sleep(1)
 print()
 print("The all-in-one health and wellness app designed to empower individuals on their weight management journey.") 
 time.sleep(1)
@@ -113,17 +113,19 @@ class Patient:
 
             elif choice == "3":
                 self.display_patient_info()
-                time.sleep(10)
+                time.sleep(1)
             elif choice == "4":
                 advice = medical_advise(category, self.blood_type, return_advice=True)
                 print(advice)
-                time.sleep(30)
+                time.sleep(2)
             elif choice == "5":
                diet = dietary_advice(category, self.blood_type, return_diet=True)
                print(diet)
+               time.sleep(2) 
             elif choice == "6":
                 sports = exercises(category, return_sports=True)
                 print(sports)
+                time.sleep(2)
             elif choice == "7":
                 print(informa = """
                 It is always better to seek advice from professionals.
@@ -166,6 +168,7 @@ class Patient:
                     info@kfh.rw 
                   
                 """)
+                time.sleep(2)
             elif choice == "8":
                 self.save_to_file(bmi, category, advice)
                 insert_data_query = ("INSERT INTO Patient (name, gender, blood_type, age) VALUES (%s, %s, %s, %s);")
