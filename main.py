@@ -35,6 +35,12 @@ class Patient:
             file.write(f"BMI: {bmi:.2f}\nCategory: {category}\n")
             file.write("Medical Advice:\n")
             file.write(advice or "")
+            file.write("Dietary Advice:\n")
+            file.write(diet or "")
+            file.write("workout routine for you: \n")
+            file.write(sports)
+            file.write("info about nutritionists and hospitals you can visit: ")
+            file.write(informa)
            
 
     def run_application(self):
@@ -45,6 +51,7 @@ class Patient:
         advice = ""
         diet=""
         sports=""
+        informa=""
         connection = MySQLdb.connect(
         host="localhost",
         user="root",
@@ -118,7 +125,7 @@ class Patient:
                 sports = exercises(category, return_sports=True)
                 print(sports)
             elif choice == "7":
-                print("""
+                print(informa = """
                 It is always better to seek advice from professionals.
                 Here is a list of recommended professionals like doctors and nutritionists.
                 
