@@ -49,9 +49,48 @@ class Patient:
         height = 0.0
         bmi = 0.0
         advice = ""
-        diet=""
-        sports=""
-        informa=""
+        diet = ""
+        sports = ""
+        informa = """
+                It is always better to seek advice from professionals.
+                Here is a list of recommended professionals like doctors and nutritionists.
+                
+                Nutritionists:
+                
+                - Nutrition Cabinet: LA PERVENCHE NUTRITION CABINET
+                  tel: 0780 626 378
+                  location: Opposite to, KK 10 Ave, Kigali
+                - Nutrition Cabinet: NUTRI-SANTE LTD
+                  tel: 0788 729 794
+                  location: Opposite to, KK 10 Ave, Kigali
+                - Nutri-Mediplus Nutrition cabinet
+                  tel: 0788 940 474
+                  location: KG 165 St, 2A, Kigali
+                - Amazon Nutrition Cabinet
+                  tel: 0788 906 119
+                  location: KG 173 St, Kigali
+                - NutriFirst Ltd
+                  tel: 0793 605 108
+                  location: KK 222 St, Kigali
+                
+                Hospitals:
+                
+                - CHUK
+                    tel: 0788 304 005
+                    location: KN 4 Ave, Kigali
+                - KIBAGABAGA HOSPITAL
+                    tel:0788 732 945
+                    location:KG 19 Ave, Kigali	
+                - La Croix du Sud Hospital
+                    tel: 0785 246 882
+                    location: KG 201 St, Kigali
+                - KANOMBE MILITARY HOSPITAL	
+                    location: 25C9+H57, Kigali
+                    info@rwandamilitaryhospital.rw
+                - KING FAISAL HOSPITAL	
+                    tel: 0788 123 200
+                    info@kfh.rw 
+                """
         connection = MySQLdb.connect(
         host="localhost",
         user="root",
@@ -127,47 +166,7 @@ class Patient:
                 print(sports)
                 time.sleep(2)
             elif choice == "7":
-                print(informa = """
-                It is always better to seek advice from professionals.
-                Here is a list of recommended professionals like doctors and nutritionists.
-                
-                Nutritionists:
-                
-                - Nutrition Cabinet: LA PERVENCHE NUTRITION CABINET
-                  tel: 0780 626 378
-                  location: Opposite to, KK 10 Ave, Kigali
-                - Nutrition Cabinet: NUTRI-SANTE LTD
-                  tel: 0788 729 794
-                  location: Opposite to, KK 10 Ave, Kigali
-                - Nutri-Mediplus Nutrition cabinet
-                  tel: 0788 940 474
-                  location: KG 165 St, 2A, Kigali
-                - Amazon Nutrition Cabinet
-                  tel: 0788 906 119
-                  location: KG 173 St, Kigali
-                - NutriFirst Ltd
-                  tel: 0793 605 108
-                  location: KK 222 St, Kigali
-                
-                Hospitals:
-                
-                - CHUK
-                    tel: 0788 304 005
-                    location: KN 4 Ave, Kigali
-                - KIBAGABAGA HOSPITAL
-                    tel:0788 732 945
-                    location:KG 19 Ave, Kigali	
-                - La Croix du Sud Hospital
-                    tel: 0785 246 882
-                    location: KG 201 St, Kigali
-                - KANOMBE MILITARY HOSPITAL	
-                    location: 25C9+H57, Kigali
-                    info@rwandamilitaryhospital.rw
-                - KING FAISAL HOSPITAL	
-                    tel: 0788 123 200
-                    info@kfh.rw 
-                  
-                """)
+                print(informa)
                 time.sleep(2)
             elif choice == "8":
                 self.save_to_file(bmi, category, advice)
@@ -202,7 +201,7 @@ def bmi_calculator(weight, height):
 
 def dietary_advice(category, blood_type, return_diet=False):
     category_lower = category.lower()
-    diet=""
+    diet = ""
 
     if category_lower == "underweight":
         if blood_type == "o" or blood_type == "O" or blood_type == "ab" or blood_type == "AB":
