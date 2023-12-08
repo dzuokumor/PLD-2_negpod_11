@@ -945,11 +945,11 @@ def medical_advise(category, blood_type, return_advice=False):
 
             Regular Exercise:
             Engage in a combination of aerobic exercises and strength training for effective weight management.
-
+            """
                 
         else:
             print("Invalid blood type for the given category")
-            """
+            
 
     elif category_lower == "obese":
         if blood_type == "o" or blood_type == "a" or blood_type == "b" or blood_type == "A" or blood_type == "B" or blood_type == "O" or blood_type == "ab" or blood_type == "AB":
