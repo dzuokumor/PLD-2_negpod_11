@@ -26,7 +26,7 @@ class Patient:
     def display_patient_info(self):
         print(f"Name: {self.name}\nGender: {self.gender}\nBlood Type: {self.blood_type}\nAge: {self.age}")
 
-    def save_to_file(self, bmi, category, advice):
+    def save_to_file(self, bmi, category, advice, diet, sports, informa):
         os.makedirs("health_reports", exist_ok=True)
         file_name = f"{self.name}_health_report.txt"
         file_path = os.path.join("health_reports", file_name)
