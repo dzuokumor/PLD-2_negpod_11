@@ -362,102 +362,88 @@ def dietary_advice(category, blood_type, return_diet=False):
             diet = """ Dietary advice:
 
             meal plan:
-            Monday:
-            Breakfast:
             
+            Monday:
+            Breakfast:           
             Miso soup with tofu and seaweed.
             Brown rice with furikake seasoning.
             Sliced oranges.
-            Lunch:
-            
+            Lunch:           
             Chicken teriyaki stir-fry with broccoli and bell peppers.
             Steamed jasmine rice.
             Asian coleslaw with sesame dressing.
-            Dinner:
-            
+            Dinner:           
             Salmon sashimi.
             Vegetable tempura.
             Quinoa sushi rolls.
-            Tuesday:
-            Breakfast:
             
+            Tuesday:
+            Breakfast:            
             Vietnamese pho (rice noodle soup) with beef slices and herbs.
             Fresh lychee fruit.
-            Lunch:
-            
+            Lunch:            
             Shrimp pad Thai with rice noodles.
             Thai cucumber salad with peanuts.
-            Dinner:
-            
+            Dinner:           
             Korean bulgogi (marinated beef) with banchan (side dishes).
             Kimchi fried rice.
             Steamed bok choy.
-            Wednesday:
-            Breakfast:
             
+            Wednesday:
+            Breakfast:            
             Chinese congee with century egg and pickled vegetables.
             Steamed dumplings (dim sum).
-            Lunch:
-            
+            Lunch:            
             Japanese bento box with grilled mackerel, pickles, and rice.
             Miso-glazed eggplant.
-            Dinner:
-            
+            Dinner:            
             Indian chickpea curry (Chana Masala) with basmati rice.
             Garlic naan bread.
             Cucumber raita.
-            Thursday:
-            Breakfast:
             
+            Thursday:
+            Breakfast:         
             Taiwanese scallion pancake.
             Soy milk with black sesame seeds.
-            Lunch:
-            
+            Lunch:           
             Thai green curry with chicken and vegetables.
             Jasmine rice.
             Mango sticky rice for dessert.
-            Dinner:
-            
+            Dinner:        
             Sushi rolls with avocado, cucumber, and crab.
             Edamame beans.
             Miso-glazed roasted eggplant.
-            Friday:
-            Breakfast:
             
+            Friday:
+            Breakfast:       
             Korean rolled omelette (gyeran mari) with seaweed.
             Fresh pineapple slices.
-            Lunch:
-            
+            Lunch:           
             Bibimbap (Korean mixed rice bowl) with bulgogi, vegetables, and a fried egg.
             Kimchi.
-            Dinner:
-            
+            Dinner:           
             Malaysian laksa soup with shrimp and tofu.
             Roti canai with curry dipping sauce.
-            Saturday:
-            Breakfast:
             
+            Saturday:
+            Breakfast:           
             Japanese matcha green tea pancakes with red bean paste.
             Mixed berries.
-            Lunch:
-            
+            Lunch:           
             Indonesian nasi goreng (fried rice) with chicken and prawns.
             Gado-gado salad with peanut sauce.
-            Dinner:
-            
+            Dinner:           
             Chinese hot pot with a variety of vegetables, tofu, and thinly sliced beef.
             Steamed jasmine rice.
+            
             Sunday:
             Breakfast:
-            
             Filipino garlic fried rice (sinangag) with tocino (sweet cured pork) and a fried egg.
             Papaya slices.
             Lunch:
-            
             Thai massaman curry with chicken, potatoes, and peanuts.
             Coconut milk sticky rice with mango.
             Dinner:
-            
             Vietnamese banh mi sandwich with grilled lemongrass chicken.
             Fresh spring rolls with peanut dipping sauce.
                
@@ -471,7 +457,7 @@ def dietary_advice(category, blood_type, return_diet=False):
             Individualized advice from healthcare professionals is crucial for 
             addressing specific health conditions and dietary needs.
             """
-        elif blood_type == "a" or blood_type == "A" or blood_type == "b" or blood_type == "B:
+        elif blood_type == "a" or blood_type == "A" or blood_type == "b" or blood_type == "B":
             diet = """ Dietary addice:
             meal plan:
             
