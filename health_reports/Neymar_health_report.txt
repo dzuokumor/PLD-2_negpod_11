@@ -1,0 +1,76 @@
+Name: Neymar
+Gender: male
+Blood Type: b
+Age: 20
+BMI: 21.15
+Category: Normal weight
+Medical Advice:
+Dietary Advice:
+workout routine for you: 
+
+        Monday:
+            Cardio:
+            30 minutes of running or cycling.
+        Tuesday:
+            Strength Training:
+            Full-body workout with weights - 4 sets of 10-12 reps each.
+        Wednesday:
+            Cardio and Interval Training:
+            High-intensity interval training (HIIT) - 20 minutes.
+        Thursday:
+            Flexibility and Mobility:
+            Pilates or yoga - 30 minutes.
+        Friday:
+            Strength Training:
+            Target specific muscle groups with compound exercises - 4 sets of 10-12 reps each.
+        Saturday:
+            Cardio:
+            30 minutes of swimming or rowing.
+        Sunday:
+            Active Recovery:
+            Light hiking or cycling.
+
+        Notes:
+        Warm-up before each session and cool down afterward.
+        Progress gradually and listen to your body.
+        Include activities you enjoy to make fitness a sustainable lifestyle.
+        info about nutritionists and hospitals you can visit: 
+                It is always better to seek advice from professionals.
+                Here is a list of recommended professionals like doctors and nutritionists.
+                
+                Nutritionists:
+                
+                - Nutrition Cabinet: LA PERVENCHE NUTRITION CABINET
+                  tel: 0780 626 378
+                  location: Opposite to, KK 10 Ave, Kigali
+                - Nutrition Cabinet: NUTRI-SANTE LTD
+                  tel: 0788 729 794
+                  location: Opposite to, KK 10 Ave, Kigali
+                - Nutri-Mediplus Nutrition cabinet
+                  tel: 0788 940 474
+                  location: KG 165 St, 2A, Kigali
+                - Amazon Nutrition Cabinet
+                  tel: 0788 906 119
+                  location: KG 173 St, Kigali
+                - NutriFirst Ltd
+                  tel: 0793 605 108
+                  location: KK 222 St, Kigali
+                
+                Hospitals:
+                
+                - CHUK
+                    tel: 0788 304 005
+                    location: KN 4 Ave, Kigali
+                - KIBAGABAGA HOSPITAL
+                    tel:0788 732 945
+                    location:KG 19 Ave, Kigali	
+                - La Croix du Sud Hospital
+                    tel: 0785 246 882
+                    location: KG 201 St, Kigali
+                - KANOMBE MILITARY HOSPITAL	
+                    location: 25C9+H57, Kigali
+                    info@rwandamilitaryhospital.rw
+                - KING FAISAL HOSPITAL	
+                    tel: 0788 123 200
+                    info@kfh.rw 
+                
