@@ -458,7 +458,7 @@ def dietary_advice(category, blood_type, return_diet=False):
             addressing specific health conditions and dietary needs.
             """
         elif blood_type == "a" or blood_type == "A" or blood_type == "b" or blood_type == "B":
-            diet = """ Dietary addice:
+            diet = """ Dietary advice:
             meal plan:
             
             Monday:
