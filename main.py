@@ -169,7 +169,7 @@ class Patient:
                 print(informa)
                 time.sleep(2)
             elif choice == "8":
-                self.save_to_file(bmi, category, advice)
+                self.save_to_file(bmi, category, advice, diet, sports, informa)
                 insert_data_query = ("INSERT INTO Patient (name, gender, blood_type, age) VALUES (%s, %s, %s, %s);")
                 data = (self.name, self.gender, self.blood_type, self.age)
                 print(f"Executing SQL query: {insert_data_query}")
